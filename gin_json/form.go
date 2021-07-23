@@ -20,15 +20,15 @@ func main() {
 	// JSON绑定
 	r.POST("/loginForm", func(c *gin.Context) {
 		// 声明接收的变量
-		var form Login
+		var login Login
 		// Bind()默认解析并绑定form格式
 		// 根据请求头中content-type自动推断
-		if err := c.Bind(&form); err != nil {
+		if err := c.Bind(&login); err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 			return
 		}
 		// 判断用户名密码是否正确
-		if form.User != "root" || form.Pssword != "admin" {
+		if login.User != "root" || login.Pssword != "admin" {
 			c.JSON(http.StatusBadRequest, gin.H{"status": "304"})
 			return
 		}
