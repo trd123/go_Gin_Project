@@ -39,6 +39,21 @@ func main() {
 		for i := 0; i < 10; i++ {
 			wg.Add(1)
 			go func() {
+
+				/*
+					string 与 int 类型的转化：
+					string 转成 int：
+					int, err := strconv.Atoi(string)
+
+					string 转成 int64：
+					int64, err := strconv.ParseInt(string, 10, 64)
+
+					int 转成 string：
+					string := strconv.Itoa(int)
+
+					int64 转成 string：
+					string := strconv.FormatInt(int64,10)
+				*/
 				str := strconv.Itoa(i)
 				defer wg.Done()
 				time.Sleep(1 * time.Second)
