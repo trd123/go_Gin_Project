@@ -1,4 +1,4 @@
-module go_Gin_Project
+module gin_json
 
 go 1.14
 
